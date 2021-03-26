@@ -4,4 +4,8 @@
 - [X] add person
 - [ ] connect to database
 
-http://localhost:8080/swagger-ui.html
+Swagger Link
+- http://localhost:8080/swagger-ui.html
+
+Card Board for Agile Practice
+- https://github.com/ManApart/smudge_practice/projects/1
