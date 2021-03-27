@@ -3,7 +3,7 @@ package org.smudge.petstore;
 import javax.persistence.*;
 
 @Entity
-@Table(name="people")
+@Table(name="person")
 public class PersonEntity {
 
     @Id
