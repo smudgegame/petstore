@@ -1,14 +1,13 @@
 package org.smudge.petstore;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="people")
 public class PersonEntity {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
     private String name;
@@ -36,6 +35,10 @@ public class PersonEntity {
 
     public void setName(String newName) {
         this.name = newName;
+    }
+
+    public Person toBusinessObject() {
+        return new Person(id, name);
     }
 
 }

@@ -1,5 +1,6 @@
 package org.smudge.petstore;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -10,6 +11,9 @@ import java.util.Map;
 public class PersonService {
     //Person id to person
     private Map<Integer, Person> persons = new HashMap<>();
+
+    @Autowired
+    private PersonRepository repo;
 
     public PersonService() {
         this.persons.put(0, new Person(0, "Aaron"));
@@ -22,9 +26,10 @@ public class PersonService {
     }
 
     public Person createPerson(String name) {
-        Person newPerson = new Person(getNextKey(), name);
-        this.persons.put(newPerson.getId(), newPerson);
-        return newPerson;
+        PersonEntity newPerson = new PersonEntity(getNextKey(), name);
+        repo.save(newPerson);
+        //  this.persons.put(newPerson.getId(), newPerson);
+        return newPerson.toBusinessObject();
     }
 
     private int getNextKey() {
