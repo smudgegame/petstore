@@ -17,11 +17,11 @@ class PetController(
 
     @PostMapping
     fun createPet(@RequestBody newPet: Pet): Pet {
-        return petService.createPet(newPet.ownerId, newPet.name, newPet.type)
+        return petService.createPet(newPet.id, newPet.ownerId, newPet.name, newPet.type)
     }
 
     @PutMapping
-    fun changeName(@RequestParam id: Int, @RequestParam newName: String): Pet {
-        return petService.changeName(id, newName)
+    fun changeName(@RequestParam id: Int, @RequestParam ownerId:Int, @RequestParam newName: String = "Tony", @RequestParam type:String = "Cat" ): Pet {
+        return petService.changeName(id, ownerId, newName, type)
     }
 }

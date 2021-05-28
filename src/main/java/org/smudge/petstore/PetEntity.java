@@ -13,13 +13,17 @@ public class PetEntity {
     private String type;
 
     public PetEntity(){
+
+    }
+
+    public PetEntity(int id, int ownerId, String name, String type){
         this.id = id;
         this.ownerId = ownerId;
         this.name = name;
         this.type = type;
     }
 
-    public int getId(){
+   public int getId(){
         return id;
     }
 

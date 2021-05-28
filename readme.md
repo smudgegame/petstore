@@ -17,3 +17,8 @@ docker cp ./src/main/resources/setup.sql postgres:/tmp/setup.sql
 docker exec -u postgres postgres psql postgres postgres -f tmp/setup.sql
 docker exec -it postgres psql -U postgres
 ```
+
+Postgres
+```
+\dt
+```
