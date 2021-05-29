@@ -21,4 +21,5 @@ docker exec -it postgres psql -U postgres
 Postgres
 ```
 \dt
+select person.id,person.name,pet.name,pet.type from person full outer join pet on person.id=pet.owner_id;
 ```
