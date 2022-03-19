@@ -13,6 +13,8 @@ Card Board for Agile Practice
 Docker Startup
 ```
 docker run -e POSTGRES_PASSWORD=pass -d --name postgres -p 5432:5432 postgres
+OR
+docker start prosgress
 docker cp ./src/main/resources/setup.sql postgres:/tmp/setup.sql
 docker exec -u postgres postgres psql postgres postgres -f tmp/setup.sql
 docker exec -it postgres psql -U postgres
